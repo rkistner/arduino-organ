@@ -7,6 +7,7 @@
 #include "Wire.h"
 
 byte last[12];
+byte counter[12];
 
 void setup()
 {
@@ -52,12 +53,26 @@ void loop()
         Wire.requestFrom(0x20, 1); // request one byte of data from MCP20317
         byte inputs=Wire.read(); // store the incoming byte into "inputs"
         byte pressed = inputs & 0b11;
-        if(pressed != last[i]) {  // || (pressed == 0b11 && i >= 5)
-          Serial.print(i);
-          Serial.print(' ');
-          Serial.println(pressed, BIN); // display the contents of the GPIOB register in binary
+
+        if(pressed == 0b11) {
+            counter[i] += 1;
+        } else {
+            if(pressed != last[i]) {  // || (pressed == 0b11 && i >= 5)
+              Serial.print(i);
+              Serial.print(' ');
+              if(pressed == 0b01) {
+                 Serial.print("DOWN");
+              } else {
+                  Serial.print("UP");
+              }
+              Serial.print(' ');
+              Serial.print(counter[i]);
+              Serial.println();
+            }
+            counter[i] = 0;
+            last[i] = pressed;
         }
-        last[i] = pressed;
+        
     }
 }
 
