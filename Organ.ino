@@ -17,7 +17,7 @@ const int DOWN = 0b01;
 const int UP = 0b10;
 
 const byte NOTE_MAPPING[12] = {59, 57, 55, 53, 51, 49, 52, 50, 54, 56, 58, 60};
-
+const byte VELOCITY_MAPPING[26] = {127, 111, 97, 86, 73, 64, 58, 53, 48, 44, 40, 36, 33, 30, 27, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11, 10};
 /*
 Note ID MIDI
 C# 5  49
@@ -82,14 +82,23 @@ void loop()
         byte pressed = inputs & 0b11;
 
         if(pressed == 0b11) {
-            counter[i] += 1;
+            if(counter[i] < 50) {
+                counter[i] += 1;
+            }
         } else {
             if(pressed != last[i]) {
                byte note = NOTE_MAPPING[i];
-               if(pressed == DOWN) {
-                   MyMIDI.sendNoteOn(note, 64, 1);  // Send a Note (pitch 42, velo 127 on channel 1)
+               byte count = counter[i];
+               byte velocity;
+               if(count < 26) {
+                   velocity = VELOCITY_MAPPING[count];
                } else {
-                   MyMIDI.sendNoteOff(note, 64, 1);
+                   velocity = 10;
+               }
+               if(pressed == DOWN) {
+                   MyMIDI.sendNoteOn(note, velocity, 1);  // Send a Note (pitch 42, velo 127 on channel 1)
+               } else {
+                   MyMIDI.sendNoteOff(note, velocity, 1);
                }
 //              Serial.print(i);
 //              Serial.print(' ');
