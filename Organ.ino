@@ -34,7 +34,7 @@ void loop()
             b = 0xFF;
         } else {
             a = 0xFF;
-            b = 0xFF;
+            b = 0xFF & ~(1 << (i - 6));
         }
         Wire.beginTransmission(0x20);
         Wire.write(0x12); // address bank A
