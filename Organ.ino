@@ -42,24 +42,12 @@ void loop()
     
 //    delay(1);
 //    
-    for(int i = 0; i < 12; i++) {
-        int a;
-        byte b;
-        if(i < 8) {
-            a = 0xFF & ~(1 << i);
-            b = 0xFF;
-        } else {
-            a = 0xFF;
-            b = 0xFF & ~(1 << (i-8+2)); 
-        }
+    for(int i = 0; i < 8; i++) {
         Wire.beginTransmission(0x20);
         Wire.write(0x12); // address bank A
-        Wire.write(a); // value to send
+        int v = 0xFF & ~(1 << i);
+        Wire.write(v); // value to send
         Wire.endTransmission();
-        //Wire.beginTransmission(0x20);
-        //Wire.write(0x13); // address bank B
-        //Wire.write(b); // value to send
-        //Wire.endTransmission();
         //delay(1);
 
         Wire.beginTransmission(0x20);
