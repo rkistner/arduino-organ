@@ -6,7 +6,7 @@
 // pins 15~17 to GND, I2C bus address is 0x20
 #include "Wire.h"
 
-byte last[8];
+byte last[12];
 
 void setup()
 {
@@ -22,33 +22,29 @@ void setup()
     
     Wire.beginTransmission(0x20);
     Wire.write(0x01); // IODIRB register
-    Wire.write(0xFF); // set all of bank B to inputs
+    Wire.write(0b00000011); // set all of bank B to inputs
     Wire.endTransmission();
-    
-//    Wire.endTransmission(0x20);
-//    Wire.write(0x0D); // GPPUB register
-//    Wire.write(0xFF); // enable all pull-up resistors on bank B
-//    Wire.endTransmission();
-
 }
 void loop()
 {
-//    
-
-//    
-//    delay(1);
-//    
-//    
-    
-//    delay(1);
-//    
-    for(int i = 0; i < 8; i++) {
+    for(int i = 0; i < 12; i++) {
+        int a, b;
+        if(i < 8) {
+            a = 0xFF & ~(1 << i);
+            b = 0xFF;
+        } else {
+            a = 0xFF;
+            b = 0xFF;
+        }
         Wire.beginTransmission(0x20);
         Wire.write(0x12); // address bank A
-        int v = 0xFF & ~(1 << i);
-        Wire.write(v); // value to send
+        Wire.write(a); // value to send
         Wire.endTransmission();
-        //delay(1);
+        
+        Wire.beginTransmission(0x20);
+        Wire.write(0x13); // address bank B
+        Wire.write(b); // value to send
+        Wire.endTransmission();
 
         Wire.beginTransmission(0x20);
         Wire.write(0x13); // set MCP23017 memory pointer to GPIOB address
@@ -62,9 +58,6 @@ void loop()
           Serial.println(pressed, BIN); // display the contents of the GPIOB register in binary
         }
         last[i] = pressed;
-        
-        
-        //delay(1); // for debounce
     }
 }
 
