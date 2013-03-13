@@ -10,8 +10,8 @@
 
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial, MyMIDI)
 
-byte last[12];
-byte counter[12];
+byte last[24];
+byte counter[24];
 
 const int DOWN = 0b01;
 const int UP = 0b10;
@@ -79,40 +79,46 @@ void loop()
         Wire.endTransmission();
         Wire.requestFrom(0x20, 1); // request one byte of data from MCP20317
         byte inputs=Wire.read(); // store the incoming byte into "inputs"
-        byte pressed = inputs & 0b11;
-
-        if(pressed == 0b11) {
-            if(counter[i] < 50) {
-                counter[i] += 1;
+        byte pressed[2];
+        pressed[0] = inputs & 0b11;
+        pressed[1] = (inputs >> 6) & 0b11;
+        
+        for(int o = 0; o < 2; o++) {
+            int j = o*12+i;
+            if(pressed[o] == 0b11) {
+                if(counter[j] < 50) {
+                    counter[j] += 1;
+                }
+            } else {
+                if(pressed[o] != last[j]) {
+                   byte note = NOTE_MAPPING[i];
+                   byte count = counter[j];
+                   byte velocity;
+                   if(count < 26) {
+                       velocity = VELOCITY_MAPPING[count];
+                   } else {
+                       velocity = 10;
+                   }
+                   velocity = 64;
+                   if(pressed[o] == DOWN) {
+                       MyMIDI.sendNoteOn(note+o*12, velocity, 1);  // Send a Note (pitch 42, velo 127 on channel 1)
+                   } else {
+                       MyMIDI.sendNoteOff(note+o*12, velocity, 1);
+                   }
+    //              Serial.print(i);
+    //              Serial.print(' ');
+    //              if(pressed == 0b01) {
+    //                 Serial.print("DOWN");
+    //              } else {
+    //                  Serial.print("UP");
+    //              }
+    //              Serial.print(' ');
+    //              Serial.print(counter[i]);
+    //              Serial.println();
+                }
+                counter[j] = 0;
+                last[j] = pressed[o];
             }
-        } else {
-            if(pressed != last[i]) {
-               byte note = NOTE_MAPPING[i];
-               byte count = counter[i];
-               byte velocity;
-               if(count < 26) {
-                   velocity = VELOCITY_MAPPING[count];
-               } else {
-                   velocity = 10;
-               }
-               if(pressed == DOWN) {
-                   MyMIDI.sendNoteOn(note, velocity, 1);  // Send a Note (pitch 42, velo 127 on channel 1)
-               } else {
-                   MyMIDI.sendNoteOff(note, velocity, 1);
-               }
-//              Serial.print(i);
-//              Serial.print(' ');
-//              if(pressed == 0b01) {
-//                 Serial.print("DOWN");
-//              } else {
-//                  Serial.print("UP");
-//              }
-//              Serial.print(' ');
-//              Serial.print(counter[i]);
-//              Serial.println();
-            }
-            counter[i] = 0;
-            last[i] = pressed;
         }
         
     }
