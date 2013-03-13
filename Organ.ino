@@ -1,14 +1,8 @@
-/*
- Example 41.2 - Microchip MCP23017 with Arduino
- http://tronixstuff.wordpress.com/tutorials > chapter 41
- John Boxall | CC by-sa-nc
- */
 // pins 15~17 to GND, I2C bus address is 0x20
 #include "Wire.h"
-#define MIDI_AUTO_INSTANCIATE    0
-#include <MIDI.h>
 
-MIDI_CREATE_INSTANCE(HardwareSerial, Serial, MyMIDI)
+#define EVENT_NOTE_ON 0x09
+#define EVENT_NOTE_OFF 0x08
 
 byte last[24];
 byte counter[24];
@@ -19,7 +13,7 @@ const int UP = 0b10;
 const byte NOTE_MAPPING[12] = {59, 57, 55, 53, 51, 49, 52, 50, 54, 56, 58, 60};
 const byte VELOCITY_MAPPING[26] = {127, 111, 97, 86, 73, 64, 58, 53, 48, 44, 40, 36, 33, 30, 27, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11, 10};
 /*
-Note ID MIDI
+No ID MIDI
 C# 5  49
 D  7  50
 D# 4  51
@@ -34,10 +28,19 @@ B  0  59
 C  11 60
 */
 
+void sendMidi(byte event, byte m1, byte m2, byte m3) {
+  MIDISerial.write(event);
+  MIDISerial.write(m1);
+  MIDISerial.write(m2);
+  MIDISerial.write(m3);
+  MIDISerial.flush();
+}
+
 void setup()
 {
     Wire.begin(); // wake up I2C bus
-    TWBR=2;  // Increase the speed - http://electronics.stackexchange.com/questions/29457/how-to-make-arduino-do-high-speed-i2c
+    // Increase the speed - http://electronics.stackexchange.com/questions/29457/how-to-make-arduino-do-high-speed-i2c
+    TWBR=2;
     
     Wire.beginTransmission(0x20);
     Wire.write(0x00); // IODIRA register
@@ -49,9 +52,6 @@ void setup()
     Wire.write(0x01); // IODIRB register
     Wire.write(0b00000011); // set all of bank B to inputs
     Wire.endTransmission();
-    
-    MyMIDI.begin(4);          // Launch MIDI and listen to channel 4
-    Serial.begin(115200);
 }
 void loop()
 {
@@ -101,20 +101,22 @@ void loop()
                    }
                    velocity = 64;
                    if(pressed[o] == DOWN) {
-                       MyMIDI.sendNoteOn(note+o*12, velocity, 1);  // Send a Note (pitch 42, velo 127 on channel 1)
+                     sendMidi(EVENT_NOTE_ON, 0x91, note+o*12, velocity);
                    } else {
-                       MyMIDI.sendNoteOff(note+o*12, velocity, 1);
+                     sendMidi(EVENT_NOTE_OFF, 0x81, note+o*12, velocity);
                    }
-    //              Serial.print(i);
-    //              Serial.print(' ');
-    //              if(pressed == 0b01) {
-    //                 Serial.print("DOWN");
-    //              } else {
-    //                  Serial.print("UP");
-    //              }
-    //              Serial.print(' ');
-    //              Serial.print(counter[i]);
-    //              Serial.println();
+                   /*
+                   Serial.print(i);
+                   Serial.print(' ');
+                   if(pressed[o] == DOWN) {
+                     Serial.print("DOWN");
+                   } else {
+                     Serial.print("UP");
+                   }
+                   Serial.print(' ');
+                   Serial.print(counter[j]);
+                   Serial.println();
+                   */
                 }
                 counter[j] = 0;
                 last[j] = pressed[o];
