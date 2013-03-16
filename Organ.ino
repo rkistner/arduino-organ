@@ -4,81 +4,123 @@
 #define EVENT_NOTE_ON 0x09
 #define EVENT_NOTE_OFF 0x08
 
-byte last[24];
-byte counter[24];
+#define NUM_KEYS 37
 
-const int DOWN = 0b01;
-const int UP = 0b10;
+byte last[NUM_KEYS];
+byte current[NUM_KEYS];
+byte counter[NUM_KEYS];
 
-const byte NOTE_MAPPING[12] = {59, 57, 55, 53, 51, 49, 52, 50, 54, 56, 58, 60};
+const int DOWN = 0b10;
+const int UP = 0b01;
+const int HALFWAY = 0b11;
+
+const int IO_SCAN = 0x20;
+// Solo keyboard and pedals
+const int IO_RETURN1 = 0x21;
+const int IODIRA = 0x00;
+const int IODIRB = 0x01;
+const int IOVALA = 0x12;
+const int IOVALB = 0x13;
+
+const byte NOTE_MAPPING[13] = {59, 57, 55, 53, 51, 49, 48, 50, 52, 54, 56, 58, 60};
 const byte VELOCITY_MAPPING[26] = {127, 111, 97, 86, 73, 64, 58, 53, 48, 44, 40, 36, 33, 30, 27, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11, 10};
 /*
 No ID MIDI
+Cl 6  48
 C# 5  49
 D  7  50
 D# 4  51
-E  6  52
+E  8  52
 F  3  53
-F# 8  54
+F# 9  54
 G  2  55
-G# 9  56
+G# 10  56
 A  1  57
-A# 10 58
+A# 11 58
 B  0  59
-C  11 60
+C  12 60
 */
 
 void sendMidi(byte event, byte m1, byte m2, byte m3) {
-  MIDISerial.write(event);
+  /*MIDISerial.write(event);
   MIDISerial.write(m1);
   MIDISerial.write(m2);
   MIDISerial.write(m3);
-  MIDISerial.flush();
+  MIDISerial.flush();*/
+}
+
+void wireWrite(int io, int addr, int val) {
+  Wire.beginTransmission(io);
+  Wire.write(addr);
+  Wire.write(val); // outputs
+  Wire.endTransmission();
+}
+
+int wireRead(int io, int addr) {
+  Wire.beginTransmission(io);
+  Wire.write(addr);
+  Wire.endTransmission();
+  Wire.requestFrom(io, 1);
+  return Wire.read();
 }
 
 void setup()
 {
-    Wire.begin(); // wake up I2C bus
-    // Increase the speed - http://electronics.stackexchange.com/questions/29457/how-to-make-arduino-do-high-speed-i2c
-    TWBR=2;
-    
-    Wire.beginTransmission(0x20);
-    Wire.write(0x00); // IODIRA register
-    Wire.write(0x00); // set all of bank A to outputs
-    Wire.endTransmission();
-    
-    
-    Wire.beginTransmission(0x20);
-    Wire.write(0x01); // IODIRB register
-    Wire.write(0b00000011); // set all of bank B to inputs
-    Wire.endTransmission();
+  for(int i = 0; i < NUM_KEYS; i++) {
+    last[i] = UP;
+  }
+  Wire.begin(); // wake up I2C bus
+  // Increase the speed - http://electronics.stackexchange.com/questions/29457/how-to-make-arduino-do-high-speed-i2c
+  //TWBR=2;
+  
+  // IO_SCAN - all outputs
+  wireWrite(IO_SCAN, IODIRA, 0x00);
+  wireWrite(IO_SCAN, IODIRB, 0x00);
+  
+  // IO_RETURN1 - all inputs
+  wireWrite(IO_RETURN1, IODIRA, 0xFF);
+  wireWrite(IO_RETURN1, IODIRB, 0xFF);
 }
+
 void loop()
 {
-    for(int i = 0; i < 12; i++) {
-        int a, b;
-        if(i < 8) {
-            a = 0xFF & ~(1 << i);
-            b = 0xFF;
-        } else {
-            a = 0xFF;
-            b = 0xFF & ~(1 << (i - 6));
-        }
-        Wire.beginTransmission(0x20);
-        Wire.write(0x12); // address bank A
-        Wire.write(a); // value to send
-        Wire.endTransmission();
-        
-        Wire.beginTransmission(0x20);
-        Wire.write(0x13); // address bank B
-        Wire.write(b); // value to send
-        Wire.endTransmission();
+  for(int i = 0; i < 13; i++) {
+    int a, b;
+    if(i < 6) {
+      a = 0xFF;
+      b = 0xFF & ~(1 << i);
+    } else {
+      a = 0xFF & ~(1 << (i - 5));
+      b = 0xFF;
+    }
+    
+    wireWrite(IO_SCAN, IOVALA, a);
+    wireWrite(IO_SCAN, IOVALB, b);
+    
+    int return1 = wireRead(IO_RETURN1, IOVALB);
+    int octaves[3];
+    octaves[0] = (return1 >> 2) & 0b11;
+    octaves[1] = ((return1 >> 1) & 0b1) | (((return1 >> 4) & 0b1) << 1);
+    octaves[2] = (return1 & 0b1) | (((return1 >> 5) & 0b1) << 1);
 
-        Wire.beginTransmission(0x20);
-        Wire.write(0x13); // set MCP23017 memory pointer to GPIOB address
-        Wire.endTransmission();
-        Wire.requestFrom(0x20, 1); // request one byte of data from MCP20317
-        byte inputs=Wire.read(); // store the incoming byte into "inputs"
+    for(int octave = 0; octave < 3; octave++) {
+      int note = NOTE_MAPPING[i] - 48 + octave*12;
+      current[note] = octaves[octave];
+    }
+  }
+  
+  for(int i = 0; i < NUM_KEYS; i++) {
+    int value = current[i];
+    
+    if(value != HALFWAY && value != last[i]) {
+      Serial.print(value);
+      Serial.print(' ');
+      Serial.println(i);
+      last[i] = value;
+    }
+  }
+  
+  /*
         byte pressed[2];
         pressed[0] = inputs & 0b11;
         pressed[1] = (inputs >> 6) & 0b11;
@@ -105,24 +147,12 @@ void loop()
                    } else {
                      sendMidi(EVENT_NOTE_OFF, 0x81, note+o*12, velocity);
                    }
-                   /*
-                   Serial.print(i);
-                   Serial.print(' ');
-                   if(pressed[o] == DOWN) {
-                     Serial.print("DOWN");
-                   } else {
-                     Serial.print("UP");
-                   }
-                   Serial.print(' ');
-                   Serial.print(counter[j]);
-                   Serial.println();
-                   */
                 }
                 counter[j] = 0;
                 last[j] = pressed[o];
             }
         }
         
-    }
+    }*/
 }
 
