@@ -25,7 +25,7 @@ const int IOVALB = 0x13;
 const byte NOTE_MAPPING[13] = {59, 57, 55, 53, 51, 49, 48, 50, 52, 54, 56, 58, 60};
 const byte VELOCITY_MAPPING[26] = {127, 111, 97, 86, 73, 64, 58, 53, 48, 44, 40, 36, 33, 30, 27, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11, 10};
 /*
-No ID MIDI
+N  ID MIDI
 Cl 6  48
 C# 5  49
 D  7  50
@@ -42,11 +42,11 @@ C  12 60
 */
 
 void sendMidi(byte event, byte m1, byte m2, byte m3) {
-  /*MIDISerial.write(event);
+  MIDISerial.write(event);
   MIDISerial.write(m1);
   MIDISerial.write(m2);
   MIDISerial.write(m3);
-  MIDISerial.flush();*/
+  MIDISerial.flush();
 }
 
 void wireWrite(int io, int addr, int val) {
@@ -113,46 +113,14 @@ void loop()
     int value = current[i];
     
     if(value != HALFWAY && value != last[i]) {
-      Serial.print(value);
-      Serial.print(' ');
-      Serial.println(i);
+      int velocity = 64;
+      if(value == DOWN) {
+        sendMidi(EVENT_NOTE_ON, 0x91, i + 36, velocity);
+      } else if(value == UP) {
+        sendMidi(EVENT_NOTE_OFF, 0x81, i + 36, velocity);
+      }
       last[i] = value;
     }
   }
-  
-  /*
-        byte pressed[2];
-        pressed[0] = inputs & 0b11;
-        pressed[1] = (inputs >> 6) & 0b11;
-        
-        for(int o = 0; o < 2; o++) {
-            int j = o*12+i;
-            if(pressed[o] == 0b11) {
-                if(counter[j] < 50) {
-                    counter[j] += 1;
-                }
-            } else {
-                if(pressed[o] != last[j]) {
-                   byte note = NOTE_MAPPING[i];
-                   byte count = counter[j];
-                   byte velocity;
-                   if(count < 26) {
-                       velocity = VELOCITY_MAPPING[count];
-                   } else {
-                       velocity = 10;
-                   }
-                   velocity = 64;
-                   if(pressed[o] == DOWN) {
-                     sendMidi(EVENT_NOTE_ON, 0x91, note+o*12, velocity);
-                   } else {
-                     sendMidi(EVENT_NOTE_OFF, 0x81, note+o*12, velocity);
-                   }
-                }
-                counter[j] = 0;
-                last[j] = pressed[o];
-            }
-        }
-        
-    }*/
 }
 
