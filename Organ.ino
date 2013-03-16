@@ -71,7 +71,7 @@ void setup()
   }
   Wire.begin(); // wake up I2C bus
   // Increase the speed - http://electronics.stackexchange.com/questions/29457/how-to-make-arduino-do-high-speed-i2c
-  //TWBR=2;
+  TWBR=2;
   
   // IO_SCAN - all outputs
   wireWrite(IO_SCAN, IODIRA, 0x00);
