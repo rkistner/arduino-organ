@@ -42,11 +42,8 @@ C  12 60
 */
 
 void sendMidi(byte event, byte m1, byte m2, byte m3) {
-  MIDISerial.write(event);
-  MIDISerial.write(m1);
-  MIDISerial.write(m2);
-  MIDISerial.write(m3);
-  MIDISerial.flush();
+  MIDIEvent e = {event, m1, m2, m3};
+  MIDIUSB.write(e);
 }
 
 void wireWrite(int io, int addr, int val) {
@@ -122,5 +119,6 @@ void loop()
       last[i] = value;
     }
   }
+  MIDIUSB.flush();
 }
 
