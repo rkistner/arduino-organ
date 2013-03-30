@@ -4,7 +4,7 @@
 #define EVENT_NOTE_ON 0x09
 #define EVENT_NOTE_OFF 0x08
 
-#define NUM_KEYS 37
+#define NUM_KEYS 148
 
 byte last[NUM_KEYS];
 byte current[NUM_KEYS];
@@ -24,6 +24,11 @@ const int IODIRA = 0x00;
 const int IODIRB = 0x01;
 const int IOVALA = 0x12;
 const int IOVALB = 0x13;
+
+const int CHANNEL_PEDALS = 0;
+const int CHANNEL_LOWER = 1;
+const int CHANNEL_UPPER = 2;
+const int CHANNEL_SOLO = 3;
 
 // Mapping from return line number to note sequence number
 /*
@@ -69,6 +74,12 @@ int wireRead(int io, int addr) {
   return Wire.read();
 }
 
+// Given: return value v, positions a and b
+// Returns: the two bits at positions a (low bit) and b (high bit)
+int getKey(int v, int a, int b) {
+  return ((v >> a) & 0b1) | (((v >> b) & 0b1) << 1);
+}
+
 void setup()
 {
   for(int i = 0; i < NUM_KEYS; i++) {
@@ -85,6 +96,27 @@ void setup()
   // IO_RETURN1 - all inputs
   wireWrite(IO_RETURN1, IODIRA, 0xFF);
   wireWrite(IO_RETURN1, IODIRB, 0xFF);
+  
+  // IO_RETURN2 - all inputs
+  wireWrite(IO_RETURN2, IODIRA, 0xFF);
+  wireWrite(IO_RETURN2, IODIRB, 0xFF);
+}
+
+void sendAllMidi(int channel, int offset, int length, int midiOffset) {
+  for(int i = 0; i < length; i++) {
+    int value = current[offset+i];
+    
+    if(value != HALFWAY && value != last[offset+i]) {
+      int velocity = 64;
+      if(value == DOWN) {
+        sendMidi(EVENT_NOTE_ON, 0x90 | channel, i + midiOffset, velocity);
+      } else if(value == UP) {
+        sendMidi(EVENT_NOTE_OFF, 0x80 | channel, i + midiOffset, velocity);
+      }
+      last[offset+i] = value;
+    }
+  }
+  MIDIUSB.flush();
 }
 
 void loop()
@@ -103,30 +135,47 @@ void loop()
     wireWrite(IO_SCAN, IOVALB, b);
     
     int return1 = wireRead(IO_RETURN1, IOVALB);
-    int octaves[3];
-    octaves[0] = (return1 >> 2) & 0b11;
-    octaves[1] = ((return1 >> 1) & 0b1) | (((return1 >> 4) & 0b1) << 1);
-    octaves[2] = (return1 & 0b1) | (((return1 >> 5) & 0b1) << 1);
-
-    for(int octave = 0; octave < 3; octave++) {
-      int note = NOTE_MAPPING[i] + octave*12;
-      current[note] = octaves[octave];
+    int return2b = wireRead(IO_RETURN2, IOVALB);
+    int return2a = wireRead(IO_RETURN2, IOVALA);
+        
+    int note = NOTE_MAPPING[i];
+    
+    // Pedals - only 1 switch for down, no halfway switch
+    if(return1 & (1 << 6)) {
+      current[0 + note] = DOWN;
+    } else {
+      current[0 + note] = UP;
     }
+    
+    
+    // Lower manual
+    current[13 + note] = getKey(return2a, 4, 3);
+    current[25 + note] = getKey(return2a, 5, 2);
+    current[37 + note] = getKey(return2a, 6, 1);
+    current[49 + note] = getKey(return2a, 7, 0);
+    
+    // Upper manual
+    current[62 + note] = getKey(return2b, 3, 4);
+    current[74 + note] = getKey(return2b, 2, 5);
+    current[86 + note] = getKey(return2b, 1, 6);
+    current[98 + note] = getKey(return2b, 0, 7);
+    
+    // Solo
+    current[111 + note] = getKey(return1, 2, 3);
+    current[123 + note] = getKey(return1, 1, 4);
+    current[135 + note] = getKey(return1, 0, 5);
   }
   
-  for(int i = 0; i < NUM_KEYS; i++) {
-    int value = current[i];
-    
-    if(value != HALFWAY && value != last[i]) {
-      int velocity = 64;
-      if(value == DOWN) {
-        sendMidi(EVENT_NOTE_ON, 0x91, i + 36, velocity);
-      } else if(value == UP) {
-        sendMidi(EVENT_NOTE_OFF, 0x81, i + 36, velocity);
-      }
-      last[i] = value;
+  for(int channel = 0; channel < 4; channel++) {
+    if(channel == CHANNEL_PEDALS) {
+      sendAllMidi(channel, 0, 13, 48);
+    } else if(channel == CHANNEL_LOWER) {
+      sendAllMidi(channel, 13, 49, 36);
+    } else if(channel == CHANNEL_UPPER) {
+      sendAllMidi(channel, 62, 49, 36);
+    } else if(channel == CHANNEL_SOLO) {
+      sendAllMidi(channel, 111, 37, 36);
     }
   }
-  MIDIUSB.flush();
 }
 
