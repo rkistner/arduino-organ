@@ -17,13 +17,15 @@ const int HALFWAY = 0b11;
 const int IO_SCAN = 0x20;
 // Solo keyboard and pedals
 const int IO_RETURN1 = 0x21;
+// Upper and lower manuals
+const int IO_RETURN2 = 0x22;
+
 const int IODIRA = 0x00;
 const int IODIRB = 0x01;
 const int IOVALA = 0x12;
 const int IOVALB = 0x13;
 
-const byte NOTE_MAPPING[13] = {59, 57, 55, 53, 51, 49, 48, 50, 52, 54, 56, 58, 60};
-const byte VELOCITY_MAPPING[26] = {127, 111, 97, 86, 73, 64, 58, 53, 48, 44, 40, 36, 33, 30, 27, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11, 10};
+// Mapping from return line number to note sequence number
 /*
 N  ID MIDI
 Cl 6  48
@@ -41,6 +43,12 @@ B  0  59
 C  12 60
 */
 
+const byte NOTE_MAPPING[13] = {11, 9, 7, 5, 3, 1, 0, 2, 4, 6, 8, 10, 12};
+
+// Mapping from tick count to velocity (not used currently)
+const byte VELOCITY_MAPPING[26] = {127, 111, 97, 86, 73, 64, 58, 53, 48, 44, 40, 36, 33, 30, 27, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11, 10};
+
+
 void sendMidi(byte event, byte m1, byte m2, byte m3) {
   MIDIEvent e = {event, m1, m2, m3};
   MIDIUSB.write(e);
@@ -49,7 +57,7 @@ void sendMidi(byte event, byte m1, byte m2, byte m3) {
 void wireWrite(int io, int addr, int val) {
   Wire.beginTransmission(io);
   Wire.write(addr);
-  Wire.write(val); // outputs
+  Wire.write(val);
   Wire.endTransmission();
 }
 
@@ -101,7 +109,7 @@ void loop()
     octaves[2] = (return1 & 0b1) | (((return1 >> 5) & 0b1) << 1);
 
     for(int octave = 0; octave < 3; octave++) {
-      int note = NOTE_MAPPING[i] - 48 + octave*12;
+      int note = NOTE_MAPPING[i] + octave*12;
       current[note] = octaves[octave];
     }
   }
