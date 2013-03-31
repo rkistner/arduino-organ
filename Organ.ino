@@ -142,9 +142,9 @@ void loop()
     
     // Pedals - only 1 switch for down, no halfway switch
     if(return1 & (1 << 6)) {
-      current[0 + note] = DOWN;
-    } else {
       current[0 + note] = UP;
+    } else {
+      current[0 + note] = DOWN;
     }
     
     
