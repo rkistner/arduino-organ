@@ -3758,6 +3758,550 @@
       <color reference="../../org.diylc.components.connectivity.Jumper/borderColor"/>
       <point x="3.9" y="2.2"/>
     </org.diylc.components.connectivity.Dot>
+    <org.diylc.components.passive.Resistor>
+      <name>R3</name>
+      <alpha>127</alpha>
+      <length>
+        <value>0.3</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </length>
+      <width>
+        <value>0.08</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </width>
+      <points>
+        <java.awt.Point x="4.6" y="2.9"/>
+        <java.awt.Point x="4.6" y="3.7"/>
+      </points>
+      <bodyColor>
+        <red>130</red>
+        <green>207</green>
+        <blue>253</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>91</red>
+        <green>144</green>
+        <blue>177</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </labelColor>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>VALUE</display>
+      <flipStanding>false</flipStanding>
+      <value>
+        <value>4.7</value>
+        <unit class="org.diylc.core.measures.ResistanceUnit">K</unit>
+      </value>
+      <power>HALF</power>
+      <colorCode>_4_BAND</colorCode>
+    </org.diylc.components.passive.Resistor>
+    <org.diylc.components.passive.Resistor>
+      <name>R3</name>
+      <alpha>127</alpha>
+      <length>
+        <value>0.3</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </length>
+      <width>
+        <value>0.08</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </width>
+      <points>
+        <java.awt.Point x="4.7" y="3.4"/>
+        <java.awt.Point x="4.7" y="3.8"/>
+      </points>
+      <bodyColor>
+        <red>130</red>
+        <green>207</green>
+        <blue>253</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>91</red>
+        <green>144</green>
+        <blue>177</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </labelColor>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>VALUE</display>
+      <flipStanding>false</flipStanding>
+      <value>
+        <value>4.7</value>
+        <unit class="org.diylc.core.measures.ResistanceUnit">K</unit>
+      </value>
+      <power>HALF</power>
+      <colorCode>_4_BAND</colorCode>
+    </org.diylc.components.passive.Resistor>
+    <org.diylc.components.passive.Resistor>
+      <name>R3</name>
+      <alpha>127</alpha>
+      <length>
+        <value>0.3</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </length>
+      <width>
+        <value>0.08</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </width>
+      <points>
+        <java.awt.Point x="7.7" y="2.7"/>
+        <java.awt.Point x="7.7" y="3.7"/>
+      </points>
+      <bodyColor>
+        <red>130</red>
+        <green>207</green>
+        <blue>253</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>91</red>
+        <green>144</green>
+        <blue>177</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </labelColor>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>VALUE</display>
+      <flipStanding>false</flipStanding>
+      <value>
+        <value>4.7</value>
+        <unit class="org.diylc.core.measures.ResistanceUnit">K</unit>
+      </value>
+      <power>HALF</power>
+      <colorCode>_4_BAND</colorCode>
+    </org.diylc.components.passive.Resistor>
+    <org.diylc.components.passive.Resistor>
+      <name>R3</name>
+      <alpha>127</alpha>
+      <length>
+        <value>0.3</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </length>
+      <width>
+        <value>0.08</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </width>
+      <points>
+        <java.awt.Point x="7.8" y="3.4"/>
+        <java.awt.Point x="7.8" y="3.8"/>
+      </points>
+      <bodyColor>
+        <red>130</red>
+        <green>207</green>
+        <blue>253</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>91</red>
+        <green>144</green>
+        <blue>177</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </labelColor>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>VALUE</display>
+      <flipStanding>false</flipStanding>
+      <value>
+        <value>4.7</value>
+        <unit class="org.diylc.core.measures.ResistanceUnit">K</unit>
+      </value>
+      <power>HALF</power>
+      <colorCode>_4_BAND</colorCode>
+    </org.diylc.components.passive.Resistor>
+    <org.diylc.components.passive.Resistor>
+      <name>R3</name>
+      <alpha>127</alpha>
+      <length>
+        <value>0.3</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </length>
+      <width>
+        <value>0.08</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </width>
+      <points>
+        <java.awt.Point x="6.8" y="2.7"/>
+        <java.awt.Point x="6.8" y="3.7"/>
+      </points>
+      <bodyColor>
+        <red>130</red>
+        <green>207</green>
+        <blue>253</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>91</red>
+        <green>144</green>
+        <blue>177</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </labelColor>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>VALUE</display>
+      <flipStanding>false</flipStanding>
+      <value>
+        <value>4.7</value>
+        <unit class="org.diylc.core.measures.ResistanceUnit">K</unit>
+      </value>
+      <power>HALF</power>
+      <colorCode>_4_BAND</colorCode>
+    </org.diylc.components.passive.Resistor>
+    <org.diylc.components.passive.Resistor>
+      <name>R3</name>
+      <alpha>127</alpha>
+      <length>
+        <value>0.3</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </length>
+      <width>
+        <value>0.08</value>
+        <unit class="org.diylc.core.measures.SizeUnit">in</unit>
+      </width>
+      <points>
+        <java.awt.Point x="6.9" y="3.4"/>
+        <java.awt.Point x="6.9" y="3.8"/>
+      </points>
+      <bodyColor>
+        <red>130</red>
+        <green>207</green>
+        <blue>253</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>91</red>
+        <green>144</green>
+        <blue>177</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </labelColor>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>VALUE</display>
+      <flipStanding>false</flipStanding>
+      <value>
+        <value>4.7</value>
+        <unit class="org.diylc.core.measures.ResistanceUnit">K</unit>
+      </value>
+      <power>HALF</power>
+      <colorCode>_4_BAND</colorCode>
+    </org.diylc.components.passive.Resistor>
+    <org.diylc.components.connectivity.Line>
+      <name>LN2</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="4.4" y="4.5"/>
+        <java.awt.Point x="4.4" y="4.8"/>
+      </points>
+      <bodyColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor reference="../borderColor"/>
+      <leadColor>
+        <red>204</red>
+        <green>204</green>
+        <blue>204</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+      <color reference="../borderColor"/>
+    </org.diylc.components.connectivity.Line>
+    <org.diylc.components.connectivity.Line>
+      <name>LN3</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="5.3" y="4.5"/>
+        <java.awt.Point x="5.3" y="5.1"/>
+      </points>
+      <bodyColor reference="../../org.diylc.components.connectivity.Line[2]/bodyColor"/>
+      <borderColor reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+      <labelColor reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+      <leadColor reference="../../org.diylc.components.connectivity.Line[2]/leadColor"/>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+      <color reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+    </org.diylc.components.connectivity.Line>
+    <org.diylc.components.connectivity.Line>
+      <name>LN4</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="6.4" y="4.5"/>
+        <java.awt.Point x="6.4" y="5.5"/>
+      </points>
+      <bodyColor reference="../../org.diylc.components.connectivity.Line[2]/bodyColor"/>
+      <borderColor reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+      <labelColor reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+      <leadColor reference="../../org.diylc.components.connectivity.Line[2]/leadColor"/>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+      <color reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+    </org.diylc.components.connectivity.Line>
+    <org.diylc.components.connectivity.Line>
+      <name>LN5</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="7.5" y="4.5"/>
+        <java.awt.Point x="7.5" y="5.5"/>
+      </points>
+      <bodyColor reference="../../org.diylc.components.connectivity.Line[2]/bodyColor"/>
+      <borderColor reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+      <labelColor reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+      <leadColor reference="../../org.diylc.components.connectivity.Line[2]/leadColor"/>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+      <color reference="../../org.diylc.components.connectivity.Line[2]/borderColor"/>
+    </org.diylc.components.connectivity.Line>
+    <org.diylc.components.connectivity.Jumper>
+      <name>J5</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="3.5" y="2.0"/>
+        <java.awt.Point x="3.5" y="5.5"/>
+      </points>
+      <bodyColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor reference="../borderColor"/>
+      <leadColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+    </org.diylc.components.connectivity.Jumper>
+    <org.diylc.components.connectivity.HookupWire>
+      <name>W5</name>
+      <alpha>127</alpha>
+      <controlPoints>
+        <java.awt.Point x="5.5" y="5.5"/>
+        <java.awt.Point x="5.7" y="5.6"/>
+        <java.awt.Point x="6.3" y="5.7"/>
+        <java.awt.Point x="6.5" y="5.5"/>
+      </controlPoints>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </color>
+      <pointCount>FOUR</pointCount>
+      <gauge>_26</gauge>
+    </org.diylc.components.connectivity.HookupWire>
+    <org.diylc.components.connectivity.Jumper>
+      <name>J5</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="4.1" y="5.5"/>
+        <java.awt.Point x="4.3" y="5.5"/>
+      </points>
+      <bodyColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor reference="../borderColor"/>
+      <leadColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+    </org.diylc.components.connectivity.Jumper>
+    <org.diylc.components.connectivity.Jumper>
+      <name>J5</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="4.5" y="5.5"/>
+        <java.awt.Point x="4.5" y="4.8"/>
+      </points>
+      <bodyColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor reference="../borderColor"/>
+      <leadColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+    </org.diylc.components.connectivity.Jumper>
+    <org.diylc.components.connectivity.Jumper>
+      <name>J5</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="4.6" y="5.5"/>
+        <java.awt.Point x="5.2" y="5.5"/>
+      </points>
+      <bodyColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor reference="../borderColor"/>
+      <leadColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+    </org.diylc.components.connectivity.Jumper>
+    <org.diylc.components.connectivity.Jumper>
+      <name>J5</name>
+      <alpha>127</alpha>
+      <points>
+        <java.awt.Point x="5.4" y="5.5"/>
+        <java.awt.Point x="5.4" y="5.1"/>
+      </points>
+      <bodyColor>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+        <alpha>255</alpha>
+      </bodyColor>
+      <borderColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </borderColor>
+      <labelColor reference="../borderColor"/>
+      <leadColor>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </leadColor>
+      <display>NAME</display>
+      <flipStanding>false</flipStanding>
+    </org.diylc.components.connectivity.Jumper>
+    <org.diylc.components.connectivity.HookupWire>
+      <name>W5</name>
+      <alpha>127</alpha>
+      <controlPoints>
+        <java.awt.Point x="6.6" y="5.5"/>
+        <java.awt.Point x="6.8" y="5.6"/>
+        <java.awt.Point x="7.4" y="5.7"/>
+        <java.awt.Point x="7.6" y="5.5"/>
+      </controlPoints>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </color>
+      <pointCount>FOUR</pointCount>
+      <gauge>_26</gauge>
+    </org.diylc.components.connectivity.HookupWire>
     <org.diylc.components.misc.Label>
       <name>L1</name>
       <point x="3.1" y="3.8"/>
@@ -3765,11 +4309,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -3777,23 +4321,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -3844,11 +4388,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -3856,23 +4400,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -3895,11 +4439,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -3907,23 +4451,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -3946,11 +4490,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -3958,23 +4502,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -3997,11 +4541,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -4009,23 +4553,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -4048,11 +4592,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -4060,23 +4604,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -4099,11 +4643,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -4111,23 +4655,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -4150,11 +4694,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -4162,23 +4706,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -4201,11 +4745,11 @@
       <font>
         <attributes>
           <entry>
-            <awt-text-attribute>family</awt-text-attribute>
-            <string>Tahoma</string>
+            <awt-text-attribute>size</awt-text-attribute>
+            <float>14.0</float>
           </entry>
           <entry>
-            <awt-text-attribute>transform</awt-text-attribute>
+            <awt-text-attribute>superscript</awt-text-attribute>
             <null/>
           </entry>
           <entry>
@@ -4213,23 +4757,23 @@
             <null/>
           </entry>
           <entry>
+            <awt-text-attribute>weight</awt-text-attribute>
+            <null/>
+          </entry>
+          <entry>
+            <awt-text-attribute>family</awt-text-attribute>
+            <string>Tahoma</string>
+          </entry>
+          <entry>
             <awt-text-attribute>tracking</awt-text-attribute>
             <null/>
           </entry>
           <entry>
-            <awt-text-attribute>size</awt-text-attribute>
-            <float>14.0</float>
+            <awt-text-attribute>transform</awt-text-attribute>
+            <null/>
           </entry>
           <entry>
             <awt-text-attribute>posture</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>superscript</awt-text-attribute>
-            <null/>
-          </entry>
-          <entry>
-            <awt-text-attribute>weight</awt-text-attribute>
             <null/>
           </entry>
         </attributes>
@@ -4248,93 +4792,93 @@
   </components>
   <groups>
     <set>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[80]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[74]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[82]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[78]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[86]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[124]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[131]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[133]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[128]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[127]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[135]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[123]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[132]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[129]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[130]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[126]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[122]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[125]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[134]"/>
+    </set>
+    <set>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[88]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[101]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[92]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[104]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[95]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[94]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[102]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[91]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[97]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[90]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[96]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[103]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[100]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[89]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[98]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[93]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[99]"/>
+    </set>
+    <set>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[77]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[72]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[76]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[86]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[83]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[73]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[75]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[84]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[78]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[74]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[80]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[76]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[87]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[71]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[72]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[81]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[79]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[87]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[73]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[71]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[83]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[84]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[82]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[85]"/>
     </set>
     <set>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[112]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[110]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[116]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[107]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[115]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[120]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[121]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[105]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[119]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[106]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[117]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[114]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[108]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[111]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[118]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[109]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[113]"/>
-    </set>
-    <set>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[14]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[4]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[12]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[5]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[13]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[7]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[11]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[6]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[2]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[4]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[7]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[14]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[3]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[9]"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[8]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut"/>
       <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[10]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[11]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[13]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[6]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[9]"/>
     </set>
     <set>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[97]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[88]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[103]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[95]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[89]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[104]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[101]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[99]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[98]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[94]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[100]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[96]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[93]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[102]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[91]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[92]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[90]"/>
-    </set>
-    <set>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[131]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[127]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[133]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[125]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[123]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[135]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[129]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[126]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[134]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[124]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[130]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[132]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[128]"/>
-      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[122]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[120]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[107]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[113]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[109]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[114]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[117]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[112]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[121]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[119]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[110]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[118]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[105]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[115]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[108]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[111]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[106]"/>
+      <org.diylc.components.connectivity.TraceCut reference="../../../components/org.diylc.components.connectivity.TraceCut[116]"/>
     </set>
   </groups>
   <lockedLayers>
