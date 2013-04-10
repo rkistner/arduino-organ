@@ -1,6 +1,8 @@
 // pins 15~17 to GND, I2C bus address is 0x20
 #include "Wire.h"
 
+#include "panel.h"
+
 #define EVENT_NOTE_ON 0x09
 #define EVENT_NOTE_OFF 0x08
 
@@ -80,7 +82,7 @@ int getKey(int v, int a, int b) {
   return ((v >> a) & 0b1) | (((v >> b) & 0b1) << 1);
 }
 
-void setup()
+void keyboard_setup()
 {
   for(int i = 0; i < NUM_KEYS; i++) {
     last[i] = UP;
@@ -102,6 +104,11 @@ void setup()
   wireWrite(IO_RETURN2, IODIRB, 0xFF);
 }
 
+void setup() {
+  panel_setup();
+  keyboard_setup();
+}
+
 void sendAllMidi(int channel, int offset, int length, int midiOffset) {
   for(int i = 0; i < length; i++) {
     int value = current[offset+i];
@@ -119,8 +126,7 @@ void sendAllMidi(int channel, int offset, int length, int midiOffset) {
   MIDIUSB.flush();
 }
 
-void loop()
-{
+void keyboard_loop() {
   for(int i = 0; i < 13; i++) {
     int a, b;
     if(i < 6) {
@@ -177,5 +183,11 @@ void loop()
       sendAllMidi(channel, 111, 37, 36);
     }
   }
+}
+
+
+void loop() {
+  keyboard_loop();
+  panel_loop();
 }
 
