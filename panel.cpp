@@ -191,6 +191,20 @@ uint8_t getbit(uint8_t* array, int index) {
   return !!(array[byte_index] & (1 << bit_index));
 }
 
+uint8_t get4bits(uint8_t* array, int index) {
+  int byte_index = (index - 56) >> 3;
+  int bit_index = index & 0b111;
+  uint8_t val;
+  if(bit_index == 0) {
+    val = array[byte_index] & 0x0f;
+  } else {
+    val = array[byte_index] >> 4;
+  }
+  
+  // LSB to MSB
+  return ((val & 0b1000) >> 3) | ((val & 0b0100) >> 1) | ((val & 0b0010) << 1) | ((val & 0b0001) << 3);
+}
+
 void setbit(uint8_t* array, int index, uint8_t value) {
   int byte_index = (index - 56) >> 3;
   int bit_index = index & 0b111;
@@ -208,26 +222,32 @@ void panelSendMidi(byte event, byte m1, byte m2, byte m3) {
   MIDIUSB.write(e);
 }
 
-
-void send_button_event(int button, uint8_t on) {
-  // least 7 bits is the control, other bits make up the channel
-  /*uint8_t channel = (button >> 7) + 8;
-  uint8_t var = button & 0x7f;
-  panelSendMidi(0x0B, 0xB0 | channel, var, on ? 127 : 0);*/
+void set_nrpn_control(int index) {
   
-  // Use NRPN messages
-  
-  uint8_t coarse = button >> 7;
-  uint8_t fine = button & 0x7f;
+  uint8_t coarse = index >> 7;
+  uint8_t fine = index & 0x7f;
   
   // Controller number
   panelSendMidi(0x0B, 0xB0, 99, coarse);
   panelSendMidi(0x0B, 0xB0, 98, fine);
+}
+
+void send_button_event(int button, uint8_t on) {
+  // Use NRPN messages
+  set_nrpn_control(button);
+  
   // Controller value (coarse)
   panelSendMidi(0x0B, 0xB0, 6, on ? 127 : 0);
   
   // For fine value:
   // panelSendMidi(0x0B, 0xB0, 38, fine_value);  
+}
+
+void send_slider_event(int slider, uint8_t value) {
+  set_nrpn_control(slider);
+  
+  // Controller value (coarse). Input value is 0-15, we ajust to 0-120
+  panelSendMidi(0x0B, 0xB0, 6, value << 3);
 }
 
 int control_high = 0;
@@ -274,6 +294,12 @@ void panel_loop() {
           setbit(panel_data, i, !state);
           send_button_event(i, !state);
         }
+      }
+    } else if(config.type == PANEL_SLIDER) {
+      uint8_t value = get4bits(panel_recv, config.bit_start);
+      uint8_t prev = get4bits(panel_last, config.bit_start);
+      if(value != prev) {
+        send_slider_event(config.bit_start, value);
       }
     }
     
