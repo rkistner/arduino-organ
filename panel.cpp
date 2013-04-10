@@ -4,6 +4,49 @@
 #include "panel.h"
 
 
+// tr br t b tl bl m
+
+const int LED_A = 0b1110111;
+const int LED_B = 0b0101111;
+const int LED_C = 0b0011110;
+const int LED_D = 0b1101011;
+const int LED_E = 0b0011111;
+const int LED_F = 0b0010111;
+
+const int LED_L = 0b0001110;
+const int LED_R = 0b0000011;
+const int LED_T = 0b0001111;
+
+const int LED_0 = 0b1111110;
+const int LED_1 = 0b1100000;
+const int LED_2 = 0b1011011;
+const int LED_3 = 0b1111001;
+const int LED_4 = 0b1100101;
+const int LED_5 = 0b0111101;
+const int LED_6 = 0b0111111;
+const int LED_7 = 0b1110000;
+const int LED_8 = 0b1111111;
+const int LED_9 = 0b1110101;
+
+const int LED_HEX[16] = {
+  LED_0,
+  LED_1,
+  LED_2,
+  LED_3,
+  LED_4,
+  LED_5,
+  LED_6,
+  LED_7,
+  LED_8,
+  LED_9,
+  LED_A,
+  LED_B,
+  LED_C,
+  LED_D,
+  LED_E,
+  LED_F,
+};
+
 const int PIN_C0 = 5;
 const int PIN_C1 = 4;
 
@@ -12,6 +55,13 @@ const int PIN_SDO = MOSI;
 const int PIN_CLK = SCK;
 
 const int PERIOD = 5;
+
+
+
+
+uint8_t panel_recv[40];
+uint8_t panel_last[40];
+uint8_t panel_data[40];
 
 int shiftOut(int val, uint8_t bits=8) {
   // Clock idle when high.
@@ -64,11 +114,14 @@ void p(int c0, int c1) {
 }
 
 
+void sethex(int p, uint8_t value) {
+  int low = LED_HEX[value & 0x0f];
+  int high = LED_HEX[value >> 4];
+  
+  panel_data[16-p*2] = high;
+  panel_data[15-p*2] = low;
+}
 
-
-uint8_t panel_recv[40];
-uint8_t panel_last[40];
-uint8_t panel_data[40];
 
 void panel_setup() {
   
@@ -97,6 +150,7 @@ void panel_setup() {
 }
 
 void panel_read_write() {
+  // offset = 56
   
   for(int i = 0; i < 40; i++) {
     panel_last[i] = panel_recv[i];
@@ -149,7 +203,6 @@ void setbit(uint8_t* array, int index, uint8_t value) {
   }
 }
 
-
 void panelSendMidi(byte event, byte m1, byte m2, byte m3) {
   MIDIEvent e = {event, m1, m2, m3};
   MIDIUSB.write(e);
@@ -177,9 +230,33 @@ void send_button_event(int button, uint8_t on) {
   // panelSendMidi(0x0B, 0xB0, 38, fine_value);  
 }
 
+int control_high = 0;
+int control_low = 0;
+
+void midi_read() {
+  
+  while(MIDIUSB.available() > 0) {
+    MIDIEvent e = MIDIUSB.read();
+
+    if(e.type == 0x0B && e.m1 == 0xB0) {
+      if(e.m2 == 99) {
+        control_high = e.m3;
+      } else if(e.m2 == 98) {
+        control_low = e.m3;
+      } else if(e.m2 == 6) {
+        uint8_t value = e.m3;
+        int control = (control_high << 7) | control_low;
+        setbit(panel_data, control, value);
+      }
+    }
+  }
+}
+
+uint8_t loopcount = 0;
+
 void panel_loop() {
-  // offset = 56
-  // 
+  
+  midi_read();
   panel_read_write();
   
   int ci = 0;
